@@ -6,6 +6,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine(Functions.Greetings("Victor"));
+        Books.OutputStuffInFile();
     }
 }
