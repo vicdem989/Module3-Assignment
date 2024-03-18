@@ -1,0 +1,14 @@
+C:\Users\vicde\Downloads\Module3-Assignment\module3\obj\Debug\net7.0\module3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vicde\Downloads\Module3-Assignment\module3\obj\Debug\net7.0\module3.AssemblyInfoInputs.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\obj\Debug\net7.0\module3.AssemblyInfo.cs
+C:\Users\vicde\Downloads\Module3-Assignment\module3\obj\Debug\net7.0\module3.csproj.CoreCompileInputs.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\bin\Debug\net7.0\module3.exe
+C:\Users\vicde\Downloads\Module3-Assignment\module3\bin\Debug\net7.0\module3.deps.json
+C:\Users\vicde\Downloads\Module3-Assignment\module3\bin\Debug\net7.0\module3.runtimeconfig.json
+C:\Users\vicde\Downloads\Module3-Assignment\module3\bin\Debug\net7.0\module3.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\bin\Debug\net7.0\module3.pdb
+C:\Users\vicde\Downloads\Module3-Assignment\module3\obj\Debug\net7.0\module3.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\obj\Debug\net7.0\refint\module3.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\obj\Debug\net7.0\module3.pdb
+C:\Users\vicde\Downloads\Module3-Assignment\module3\obj\Debug\net7.0\module3.genruntimeconfig.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\obj\Debug\net7.0\ref\module3.dll
