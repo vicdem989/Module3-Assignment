@@ -85,16 +85,27 @@ namespace functions {
 
         public static List<Book> FindBookStartingWith(string bookName) {
             ReadJSONFile();
-            List<Book> results = new List<Book>();
+            List<Book> desiredBooks = new List<Book>();
             foreach (var book in books) {
                 if(book.title.Contains(bookName)) { 
                     string[] arrayOfWordsInBookTitle = book.title.Split(' ');
                     if(arrayOfWordsInBookTitle[0] == bookName) {
-                        results.Add(book);
+                        desiredBooks.Add(book);
                     }
                 }
             }
-            return results;
+            return desiredBooks;
+        }
+
+        public static List<Book> FindBookWhereAuthorNameContainsLetter(char specificChar) {
+            ReadJSONFile();
+            List<Book> desiredBooks = new List<Book>();
+            foreach (var book in books) {
+                if(book.author.Contains(specificChar)) { 
+                    desiredBooks.Add(book);
+                }
+            }
+            return desiredBooks;
         }
     }
 }
