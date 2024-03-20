@@ -22,8 +22,7 @@ namespace functions {
         }
 
         public static double GetAreaOfCircle(double radiusOfCircle) {
-            double pi = 3.14;
-            return pi * radiusOfCircle * radiusOfCircle;
+            return Math.PI * radiusOfCircle * radiusOfCircle;
         }
 
         public static string Greetings(string name) {
@@ -33,9 +32,7 @@ namespace functions {
     }
         
     public class Array {
-        public static void FlattenArray() {
-            
-        }
+
     }
 
     public class Books {
@@ -51,46 +48,54 @@ namespace functions {
             }
         public static void ReadJSONFile() {
             
-                    try
-                    {
-                        // Path to your JSON file
-                        string filePath = "books.json";
+            try
+            {
+                string filePath = "books.json";
 
-                        // Read the entire file content
-                        string jsonString = File.ReadAllText(filePath);
-
-                        // Deserialize the JSON string to a list of Book objects
-                        books = JsonSerializer.Deserialize<List<Book>>(jsonString);
-                    }
-                    catch (FileNotFoundException)
-                    {
-                        Console.WriteLine("File not found.");
-                    }
-                    catch (JsonException)
-                    {
-                        Console.WriteLine("Invalid JSON format.");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"An error occurred: {ex.Message}");
-                    }
+                string jsonString = File.ReadAllText(filePath);
+                books = JsonSerializer.Deserialize<List<Book>>(jsonString);
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("File not found.");
+            }
+            catch (JsonException)
+            {
+                Console.WriteLine("Invalid JSON format.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
         }
 
         public static void OutputStuffInFile() {
             ReadJSONFile();
+            if(books.Count <= 0) {
+                Console.WriteLine("There are no books in the library!");
+            }
              foreach (var book in books) {
                 Console.WriteLine($"Title: {book.title}");
                 Console.WriteLine($"Publication year: {book.publication_year}");
                 Console.WriteLine($"Author: {book.author}");
                 Console.WriteLine($"ISBN {book.isbn}");
-                Console.WriteLine(); // Add an empty line for better readability
+                Console.WriteLine(); 
             }
         }
 
-        public static List<Book> ReturnAmountBookStartingWith(string bookStartsWith) {
-            
+        public static List<Book> FindBookStartingWith(string bookName) {
+            ReadJSONFile();
+            List<Book> results = new List<Book>();
+            foreach (var book in books) {
+                if(book.title.Contains(bookName)) { 
+                    string[] arrayOfWordsInBookTitle = book.title.Split(' ');
+                    if(arrayOfWordsInBookTitle[0] == bookName) {
+                        results.Add(book);
+                    }
+                }
+            }
+            return results;
         }
-
     }
 }
 
