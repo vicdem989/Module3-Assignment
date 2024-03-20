@@ -2,6 +2,7 @@ namespace functions {
     using System;
     using System.IO;
     using System.Text.Json;
+    using System.Threading.Tasks.Dataflow;
 
     public class Functions {
         public static int SquareNumber(int numberToSquare) {
@@ -74,7 +75,7 @@ namespace functions {
             if(books.Count <= 0) {
                 Console.WriteLine("There are no books in the library!");
             }
-             foreach (var book in books) {
+             foreach (Book book in books) {
                 Console.WriteLine($"Title: {book.title}");
                 Console.WriteLine($"Publication year: {book.publication_year}");
                 Console.WriteLine($"Author: {book.author}");
@@ -86,7 +87,7 @@ namespace functions {
         public static List<Book> FindBookStartingWith(string bookName) {
             ReadJSONFile();
             List<Book> desiredBooks = new List<Book>();
-            foreach (var book in books) {
+            foreach (Book book in books) {
                 if(book.title.Contains(bookName)) { 
                     string[] arrayOfWordsInBookTitle = book.title.Split(' ');
                     if(arrayOfWordsInBookTitle[0] == bookName) {
@@ -100,12 +101,26 @@ namespace functions {
         public static List<Book> FindBookWhereAuthorNameContainsLetter(char specificChar) {
             ReadJSONFile();
             List<Book> desiredBooks = new List<Book>();
-            foreach (var book in books) {
+            foreach (Book book in books) {
                 if(book.author.Contains(specificChar)) { 
                     desiredBooks.Add(book);
                 }
             }
             return desiredBooks;
+        }
+
+        public static int AmountBooksBeforeOrAfterSpecificYear(int year, string beforeOrAfter) {
+            ReadJSONFile();
+            int amountBooks = 0;
+            beforeOrAfter.ToLower();
+            foreach(Book book in books) {
+                if(book.publication_year > year && beforeOrAfter == "after") {
+                    amountBooks++;
+                } else if(book.publication_year < year && beforeOrAfter == "before") {
+                    amountBooks++;
+                }
+            }
+            return amountBooks;
         }
     }
 }
