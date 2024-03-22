@@ -39,15 +39,13 @@ namespace functions {
 
     public class LeftAndRight {
 
-        private static List<Level> levels = new List<Level>();
-        private static string jsonString = string.Empty;
-        private static void ReadJsonFile() {
+        public static string jsonString = string.Empty; 
+           
+        public static int GetTotalSumOfStructure() {
             try
             {
                 string filePath = "nodes.json";
-
-                string jsonString = File.ReadAllText(filePath);
-                levels = JsonSerializer.Deserialize<List<Level>>(jsonString);
+                jsonString = File.ReadAllText(filePath);   
             }
             catch (FileNotFoundException)
             {
@@ -61,25 +59,41 @@ namespace functions {
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
-        }
-        
-        public class Level
+
+            int sumOfStructure = 0;
+
+            using (JsonDocument doc = JsonDocument.Parse(jsonString))
             {
-                public int value { get; set; }
-                public bool left { get; set; }
-                public bool right { get; set; }
+                JsonElement rootElement = doc.RootElement;
+                sumOfStructure = CalculateSumOfValues(rootElement);
             }
+            return sumOfStructure;
+
             
-
-        public static int CalculateSumOfStructure() {
-            ReadJsonFile();
-
-            Console.WriteLine(jsonString);
-
-            return 0;
+            
         }
 
-
+        public static int CalculateSumOfValues(JsonElement element) {            
+            if (element.ValueKind == JsonValueKind.Object) {
+                int sum = 0;
+                foreach (var property in element.EnumerateObject()) {
+                    if (property.Name == "value" && property.Value.ValueKind == JsonValueKind.Number) {
+                        sum += property.Value.GetInt32(); 
+                    } else {
+                        sum += CalculateSumOfValues(property.Value);
+                    }
+                }
+                return sum;
+            } else if (element.ValueKind == JsonValueKind.Array) {
+                int sum = 0;
+                foreach (var item in element.EnumerateArray()) {
+                    sum += CalculateSumOfValues(item);
+                }
+                return sum;
+            } else {
+                return 0;
+            }
+        }
     }
 
 
@@ -163,7 +177,6 @@ namespace functions {
                 public int publication_year { get; set; }
                 public string author { get; set; }
                 public string isbn { get; set; }
-                // Add more properties as needed
             }
         public static void ReadJSONFile() {
             

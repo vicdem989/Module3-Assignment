@@ -9,7 +9,7 @@ class Program
     static void Main(string[] args)
     {
 
-        LeftAndRight.CalculateSumOfStructure();
+        Console.WriteLine(LeftAndRight.GetTotalSumOfStructure());
 
 
 
