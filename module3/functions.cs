@@ -3,6 +3,7 @@ namespace functions {
     using System.ComponentModel.Design;
     using System.IO;
     using System.Net.Http.Json;
+    using System.Runtime.CompilerServices;
     using System.Runtime.InteropServices;
     using System.Text.Json;
     using System.Text.Json.Serialization;
@@ -40,8 +41,7 @@ namespace functions {
     public class LeftAndRight {
 
         public static string jsonString = string.Empty; 
-           
-        public static int GetTotalSumOfStructure() {
+        private static void ReadJsonFile() {
             try
             {
                 string filePath = "nodes.json";
@@ -59,6 +59,23 @@ namespace functions {
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
+        }
+           
+        public static int GetDeepestLevelOfStructure() {
+            ReadJsonFile();
+
+            int deepestLevelOfStructure = 0;
+
+            using (JsonDocument doc = JsonDocument.Parse(jsonString))
+            {
+                JsonElement rootElement = doc.RootElement;
+                deepestLevelOfStructure = CalculateDeepestLevelOfStructure(rootElement);
+            }
+            return deepestLevelOfStructure;
+        }
+        
+        public static int GetTotalSumOfStructure() {
+            ReadJsonFile();
 
             int sumOfStructure = 0;
 
@@ -68,12 +85,53 @@ namespace functions {
                 sumOfStructure = CalculateSumOfValues(rootElement);
             }
             return sumOfStructure;
-
-            
-            
         }
 
-        public static int CalculateSumOfValues(JsonElement element) {            
+        public static int GetAmountNodesInStructure() {
+            ReadJsonFile();
+
+            int amountOfNodes = 0;
+
+            using (JsonDocument doc = JsonDocument.Parse(jsonString))
+            {
+                JsonElement rootElement = doc.RootElement;
+                amountOfNodes = CountNodes(rootElement);
+            }
+            return amountOfNodes;
+        }
+
+        private static int CountNodes(JsonElement element) {
+            if (element.ValueKind != JsonValueKind.Object)
+                return 0;
+
+            int count = 1; 
+            foreach (var property in element.EnumerateObject())
+            {
+                if (property.Value.ValueKind == JsonValueKind.Object)
+                {
+                    count += CountNodes(property.Value); 
+                }
+            }
+            return count;
+        }
+
+        private static int CalculateDeepestLevelOfStructure(JsonElement element) {
+            if (element.ValueKind != JsonValueKind.Object)
+                return 1;
+
+            int amountOfLevels = 1;
+            foreach (var property in element.EnumerateObject())
+              {
+                if (property.Value.ValueKind == JsonValueKind.Object)
+                {
+                    int depth = 1 + CalculateDeepestLevelOfStructure(property.Value);
+                    amountOfLevels = Math.Max(amountOfLevels, depth);
+                }
+            }
+            return amountOfLevels;
+        }        
+
+        private static int CalculateSumOfValues(JsonElement element) {            
             if (element.ValueKind == JsonValueKind.Object) {
                 int sum = 0;
                 foreach (var property in element.EnumerateObject()) {

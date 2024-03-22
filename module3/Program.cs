@@ -1,6 +1,7 @@
 ﻿
 namespace program;
 
+using System.Diagnostics.Tracing;
 using System.Runtime.CompilerServices;
 using functions;
 
@@ -9,7 +10,7 @@ class Program
     static void Main(string[] args)
     {
 
-        Console.WriteLine(LeftAndRight.GetTotalSumOfStructure());
+       Console.WriteLine(LeftAndRight.GetAmountNodesInStructure());
 
 
 

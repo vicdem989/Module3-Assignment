@@ -1,1 +1,14 @@
-{"value":843,"left":{"value":865,"left":null,"right":null},"right":{"value":363,"left":null,"right":null}}
+{
+    "value": 67,
+    "left": { "value": 765, "left": null, "right": null },
+    "right": {
+      "value": 167,
+      "left": {
+        "value": 564,
+        "left": null,
+        "right": { "value": 379, "left": null, "right": null }
+      },
+      "right": null
+    }
+  }
+  
