@@ -1,0 +1,14 @@
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\bin\Debug\net7.0\Books.exe
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\bin\Debug\net7.0\Books.deps.json
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\bin\Debug\net7.0\Books.runtimeconfig.json
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\bin\Debug\net7.0\Books.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\bin\Debug\net7.0\Books.pdb
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\obj\Debug\net7.0\Books.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\obj\Debug\net7.0\Books.AssemblyInfoInputs.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\obj\Debug\net7.0\Books.AssemblyInfo.cs
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\obj\Debug\net7.0\Books.csproj.CoreCompileInputs.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\obj\Debug\net7.0\Books.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\obj\Debug\net7.0\refint\Books.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\obj\Debug\net7.0\Books.pdb
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\obj\Debug\net7.0\Books.genruntimeconfig.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\Books\obj\Debug\net7.0\ref\Books.dll

@@ -1,0 +1,14 @@
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\bin\Debug\net7.0\LeftAndRight.exe
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\bin\Debug\net7.0\LeftAndRight.deps.json
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\bin\Debug\net7.0\LeftAndRight.runtimeconfig.json
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\bin\Debug\net7.0\LeftAndRight.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\bin\Debug\net7.0\LeftAndRight.pdb
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\obj\Debug\net7.0\LeftAndRight.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\obj\Debug\net7.0\LeftAndRight.AssemblyInfoInputs.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\obj\Debug\net7.0\LeftAndRight.AssemblyInfo.cs
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\obj\Debug\net7.0\LeftAndRight.csproj.CoreCompileInputs.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\obj\Debug\net7.0\LeftAndRight.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\obj\Debug\net7.0\refint\LeftAndRight.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\obj\Debug\net7.0\LeftAndRight.pdb
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\obj\Debug\net7.0\LeftAndRight.genruntimeconfig.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\LeftAndRight\obj\Debug\net7.0\ref\LeftAndRight.dll

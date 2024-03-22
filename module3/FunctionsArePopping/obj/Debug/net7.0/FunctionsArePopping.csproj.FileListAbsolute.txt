@@ -1,0 +1,14 @@
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\bin\Debug\net7.0\FunctionsArePopping.exe
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\bin\Debug\net7.0\FunctionsArePopping.deps.json
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\bin\Debug\net7.0\FunctionsArePopping.runtimeconfig.json
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\bin\Debug\net7.0\FunctionsArePopping.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\bin\Debug\net7.0\FunctionsArePopping.pdb
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\obj\Debug\net7.0\FunctionsArePopping.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\obj\Debug\net7.0\FunctionsArePopping.AssemblyInfoInputs.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\obj\Debug\net7.0\FunctionsArePopping.AssemblyInfo.cs
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\obj\Debug\net7.0\FunctionsArePopping.csproj.CoreCompileInputs.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\obj\Debug\net7.0\FunctionsArePopping.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\obj\Debug\net7.0\refint\FunctionsArePopping.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\obj\Debug\net7.0\FunctionsArePopping.pdb
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\obj\Debug\net7.0\FunctionsArePopping.genruntimeconfig.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FunctionsArePopping\obj\Debug\net7.0\ref\FunctionsArePopping.dll

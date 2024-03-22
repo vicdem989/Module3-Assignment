@@ -1,0 +1,14 @@
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\obj\Debug\net7.0\FlattenNumbers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\obj\Debug\net7.0\FlattenNumbers.AssemblyInfoInputs.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\obj\Debug\net7.0\FlattenNumbers.AssemblyInfo.cs
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\obj\Debug\net7.0\FlattenNumbers.csproj.CoreCompileInputs.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\bin\Debug\net7.0\FlattenNumbers.exe
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\bin\Debug\net7.0\FlattenNumbers.deps.json
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\bin\Debug\net7.0\FlattenNumbers.runtimeconfig.json
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\bin\Debug\net7.0\FlattenNumbers.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\bin\Debug\net7.0\FlattenNumbers.pdb
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\obj\Debug\net7.0\FlattenNumbers.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\obj\Debug\net7.0\refint\FlattenNumbers.dll
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\obj\Debug\net7.0\FlattenNumbers.pdb
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\obj\Debug\net7.0\FlattenNumbers.genruntimeconfig.cache
+C:\Users\vicde\Downloads\Module3-Assignment\module3\FlattenNumbers\obj\Debug\net7.0\ref\FlattenNumbers.dll
