@@ -1,7 +1,11 @@
 namespace functions {
     using System;
+    using System.ComponentModel.Design;
     using System.IO;
+    using System.Net.Http.Json;
+    using System.Runtime.InteropServices;
     using System.Text.Json;
+    using System.Text.Json.Serialization;
     using System.Threading.Tasks.Dataflow;
 
     public class Functions {
@@ -32,8 +36,122 @@ namespace functions {
 
     }
         
-    public class Array {
 
+    public class LeftAndRight {
+
+        private static List<Level> levels = new List<Level>();
+        private static string jsonString = string.Empty;
+        private static void ReadJsonFile() {
+            try
+            {
+                string filePath = "nodes.json";
+
+                string jsonString = File.ReadAllText(filePath);
+                levels = JsonSerializer.Deserialize<List<Level>>(jsonString);
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("File not found.");
+            }
+            catch (JsonException)
+            {
+                Console.WriteLine("Invalid JSON format.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
+        
+        public class Level
+            {
+                public int value { get; set; }
+                public bool left { get; set; }
+                public bool right { get; set; }
+            }
+            
+
+        public static int CalculateSumOfStructure() {
+            ReadJsonFile();
+
+            Console.WriteLine(jsonString);
+
+            return 0;
+        }
+
+
+    }
+
+
+
+
+    public class FlattenTheNumbers {
+        //public static int[][] jaggedArray;
+        public static int[] Flatten() {
+
+            List<object> deserializedArray = new List<object>();
+
+            string filePath = "arrays.json";
+
+            string jsonContent = File.ReadAllText(filePath);
+             try
+            {
+                
+                deserializedArray = JsonSerializer.Deserialize<List<object>>(jsonContent);
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("File not found.");
+            }
+            catch (JsonException)
+            {
+                Console.WriteLine("Invalid JSON format.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+            
+            //Console.WriteLine(jsonContent);
+
+            List<int> result = DeserializeJsonToList(jsonContent);
+            DeserializeJsonToList(jsonContent);
+            int[] flattenedArray = result.ToArray();
+            /*foreach(int item in result) {
+                Console.WriteLine(item);
+            }*/
+
+            return flattenedArray;
+        }    
+
+        static List<int> DeserializeJsonToList(string json) {
+            List<int> result = new List<int>();
+
+            JsonDocument doc = JsonDocument.Parse(json);
+            JsonElement root = doc.RootElement;
+
+            TraverseJsonArray(root, result);
+
+            return result;
+        }
+
+         static void TraverseJsonArray(JsonElement element, List<int> result)
+            {
+                if (element.ValueKind == JsonValueKind.Array)
+                {
+                    foreach (JsonElement child in element.EnumerateArray())
+                    {
+                        if (child.ValueKind == JsonValueKind.Array)
+                        {
+                            TraverseJsonArray(child, result);
+                        }
+                        else if (child.ValueKind == JsonValueKind.Number)
+                        {
+                            result.Add(child.GetInt32());
+                        }
+                    }
+                }
+            }
     }
 
     public class Books {
@@ -121,6 +239,29 @@ namespace functions {
                 }
             }
             return amountBooks;
+        }
+
+        public static List<string> GetBooksFromGivenAuthor(string author) {
+            ReadJSONFile();
+            List<string> isbnFromAuthor = new List<string>();
+            foreach(Book book in books) {
+                if(book.author == author) {
+                    isbnFromAuthor.Add(book.isbn);
+                }
+            }            
+            return isbnFromAuthor;
+        }
+
+        public static List<Book> ListBooks(string sortingOrder) {
+
+        //Work in progress, figoure out how to sort by parameter
+            ReadJSONFile();
+            List<Book> sortedList = new List<Book>();
+            foreach(Book book in books) {
+                sortedList.Add(book);
+            }
+            sortedList.Sort();
+            return sortedList;
         }
     }
 }
