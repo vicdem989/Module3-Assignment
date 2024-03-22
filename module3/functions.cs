@@ -66,8 +66,7 @@ namespace functions {
 
             int deepestLevelOfStructure = 0;
 
-            using (JsonDocument doc = JsonDocument.Parse(jsonString))
-            {
+            using (JsonDocument doc = JsonDocument.Parse(jsonString)) {
                 JsonElement rootElement = doc.RootElement;
                 deepestLevelOfStructure = CalculateDeepestLevelOfStructure(rootElement);
             }
@@ -79,8 +78,7 @@ namespace functions {
 
             int sumOfStructure = 0;
 
-            using (JsonDocument doc = JsonDocument.Parse(jsonString))
-            {
+            using (JsonDocument doc = JsonDocument.Parse(jsonString)) {
                 JsonElement rootElement = doc.RootElement;
                 sumOfStructure = CalculateSumOfValues(rootElement);
             }
@@ -92,8 +90,7 @@ namespace functions {
 
             int amountOfNodes = 0;
 
-            using (JsonDocument doc = JsonDocument.Parse(jsonString))
-            {
+            using (JsonDocument doc = JsonDocument.Parse(jsonString)) {
                 JsonElement rootElement = doc.RootElement;
                 amountOfNodes = CountNodes(rootElement);
             }
@@ -105,10 +102,8 @@ namespace functions {
                 return 0;
 
             int count = 1; 
-            foreach (var property in element.EnumerateObject())
-            {
-                if (property.Value.ValueKind == JsonValueKind.Object)
-                {
+            foreach (var property in element.EnumerateObject()) {
+                if (property.Value.ValueKind == JsonValueKind.Object) {
                     count += CountNodes(property.Value); 
                 }
             }
@@ -120,10 +115,8 @@ namespace functions {
                 return 1;
 
             int amountOfLevels = 1;
-            foreach (var property in element.EnumerateObject())
-              {
-                if (property.Value.ValueKind == JsonValueKind.Object)
-                {
+            foreach (var property in element.EnumerateObject()) {
+                if (property.Value.ValueKind == JsonValueKind.Object) {
                     int depth = 1 + CalculateDeepestLevelOfStructure(property.Value);
                     amountOfLevels = Math.Max(amountOfLevels, depth);
                 }
@@ -154,9 +147,6 @@ namespace functions {
         }
     }
 
-
-
-
     public class FlattenTheNumbers {
         //public static int[][] jaggedArray;
         public static int[] Flatten() {
@@ -166,7 +156,7 @@ namespace functions {
             string filePath = "arrays.json";
 
             string jsonContent = File.ReadAllText(filePath);
-             try
+            try
             {
                 
                 deserializedArray = JsonSerializer.Deserialize<List<object>>(jsonContent);
@@ -323,17 +313,64 @@ namespace functions {
             return isbnFromAuthor;
         }
 
-        public static List<Book> ListBooks(string sortingOrder) {
+        public static List<Book> ListBooks(string order) {
 
-        //Work in progress, figoure out how to sort by parameter
             ReadJSONFile();
-            List<Book> sortedList = new List<Book>();
-            foreach(Book book in books) {
-                sortedList.Add(book);
-            }
-            sortedList.Sort();
-            return sortedList;
+            SortAlphabetically(books, order);
+            
+            foreach (var book in books)
+                {
+                    Console.WriteLine(book.title);
+                }
+
+            return books;
         }
+    
+        static void SortAlphabetically(List<Book> books, string order) {
+            int n = books.Count;
+            order.ToLower();
+
+            for (int i = 0; i < n - 1; i++) {
+                int minMaxIndex = i;
+                for (int j = i + 1; j < n; j++) {
+                    if ((order == "ascending" && books[j].title.CompareTo(books[minMaxIndex].title) < 0) ||
+                        (order == "descending" && books[j].title.CompareTo(books[minMaxIndex].title) > 0)) {
+                        minMaxIndex = j;
+                    }
+                }
+                if (minMaxIndex != i) {
+                    Book temp = books[i];
+                    books[i] = books[minMaxIndex];
+                    books[minMaxIndex] = temp;
+                }
+            }
+        }
+
+        static void SortByYear(List<Book> books, string order) {
+            int n = books.Count;
+            order.ToLower();
+            for (int i = 0; i < n - 1; i++) {
+                int minMaxIndex = i;
+                for (int j = i + 1; j < n; j++) {
+                    if (order == "descending") {
+                        if (books[j].publication_year > books[minMaxIndex].publication_year) {
+                            minMaxIndex = j;
+                        }
+                    } else {
+                        if (books[j].publication_year < books[minMaxIndex].publication_year) {
+                            minMaxIndex = j;
+                        }
+                    }
+                }
+                if (minMaxIndex != i) {
+                    Book temp = books[i];
+                    books[i] = books[minMaxIndex];
+                    books[minMaxIndex] = temp;
+                }
+            }
+        }
+        
     }
+    
 }
 

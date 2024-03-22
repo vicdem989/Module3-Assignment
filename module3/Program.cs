@@ -3,18 +3,20 @@ namespace program;
 
 using System.Diagnostics.Tracing;
 using System.Runtime.CompilerServices;
+using System.Text;
 using functions;
 
 class Program
 {
     static void Main(string[] args)
     {
+        List<Books.Book> thingy = Books.ListBooks("descending");
+        foreach (Books.Book book in thingy)
+        {
+            Console.WriteLine(book.title);
+        }        
 
-       Console.WriteLine(LeftAndRight.GetAmountNodesInStructure());
-
-
-
-
+       //Console.WriteLine(LeftAndRight.GetAmountNodesInStructure());
 
 
         //Console.WriteLine(Books.AmountBooksBeforeOrAfterSpecificYear(2004, "before"));
@@ -31,8 +33,8 @@ class Program
         /*int[] flattenedArray = FlattenTheNumbers.Flatten();
         Console.WriteLine("Flattened array:");
         foreach(int num in flattenedArray) {
-            Console.Write(num+ ", ");
-        }
+            Console.Write(um+ ", ");
+        }n
 */
 
     }
